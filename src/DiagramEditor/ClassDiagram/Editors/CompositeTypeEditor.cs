@@ -305,7 +305,7 @@ namespace NClass.DiagramEditor.ClassDiagram.Editors
             toolNewEvent.Visible = shape.CompositeType.SupportsEvents;
         }
 
-        public override void ValidateData()
+        protected override void ValidateData()
         {
             ValidateName();
             SetError(null);

@@ -82,7 +82,7 @@ namespace NClass.DiagramEditor.Diagrams.Editors
             }
         }
 
-        public override void ValidateData()
+        protected override void ValidateData()
         {
             var newText = txtComment.Text;
             var changeNameCommand = new ChangePropertyCommand<CommentShape, string>(shape, s => s.Comment.Text, (s, newValue) => s.Comment.Text = newValue, newText);

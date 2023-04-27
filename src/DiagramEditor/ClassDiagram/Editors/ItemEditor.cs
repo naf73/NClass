@@ -23,7 +23,7 @@ using NClass.DiagramEditor.Diagrams;
 
 namespace NClass.DiagramEditor.ClassDiagram.Editors
 {
-    public abstract partial class ItemEditor : FloatingEditor
+    public partial class ItemEditor : FloatingEditor
     {
         bool needValidation = false;
 
@@ -64,7 +64,7 @@ namespace NClass.DiagramEditor.ClassDiagram.Editors
             toolDelete.ToolTipText = Strings.Delete;
         }
 
-        public override void ValidateData()
+        protected override void ValidateData()
         {
             ValidateDeclarationLine();
             SetError(null);
@@ -142,22 +142,25 @@ namespace NClass.DiagramEditor.ClassDiagram.Editors
             Delete();
         }
 
-        internal abstract override void Relocate(DiagramElement element);
+        internal  override void Relocate(DiagramElement element){}
 
-        protected abstract void HideEditor();
+        protected virtual void HideEditor(){}
 
-        protected abstract void RefreshValues();
+        protected virtual void RefreshValues(){}
 
-        protected abstract bool ValidateDeclarationLine();
+        protected virtual bool ValidateDeclarationLine()
+        {
+            return true;
+        }
 
-        protected abstract void SelectPrevious();
+        protected virtual void SelectPrevious(){}
 
-        protected abstract void SelectNext();
+        protected virtual void SelectNext(){}
 
-        protected abstract void MoveUp();
+        protected virtual void MoveUp(){}
 
-        protected abstract void MoveDown();
+        protected virtual void MoveDown(){}
 
-        protected abstract void Delete();
+        protected virtual void Delete(){}
     }
 }

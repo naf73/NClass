@@ -41,7 +41,7 @@ namespace NClass.DiagramEditor.Diagrams.Editors
             throw new System.NotImplementedException();
         }
 
-        public override void ValidateData()
+        protected override void ValidateData()
         {
             throw new System.NotImplementedException();
         }

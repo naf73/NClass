@@ -82,7 +82,7 @@ namespace NClass.DiagramEditor.ClassDiagram.Editors
             }
         }
 
-        public override void ValidateData()
+        protected override void ValidateData()
         {
             TryValidateData();
         }

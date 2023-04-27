@@ -20,11 +20,12 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using NClass.DiagramEditor.ClassDiagram.Shapes;
 using NClass.Core;
+using NClass.DiagramEditor.Diagrams;
 using NClass.DiagramEditor.Diagrams.Editors;
 
 namespace NClass.DiagramEditor.ClassDiagram.Editors
 {
-    public abstract class FloatingEditor : EditorWindow
+    public class FloatingEditor : EditorWindow
     {
         protected const int MarginSize = 20;
         static readonly Color beginColor = SystemColors.ControlLight;
@@ -48,6 +49,21 @@ namespace NClass.DiagramEditor.ClassDiagram.Editors
         {
             base.OnPaintBackground(e);
             e.Graphics.DrawRectangle(SystemPens.ControlDark, 0, 0, Width - 1, Height - 1);
+        }
+
+        internal override void Init(DiagramElement element)
+        {
+            
+        }
+
+        internal override void Relocate(DiagramElement element)
+        {
+            
+        }
+
+        protected override void ValidateData()
+        {
+            
         }
     }
 }
